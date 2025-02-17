@@ -1,13 +1,15 @@
 #!/bin/bash
 
-# Get current date
+# Get current date and time
 CURRENT_DATE=$(date +"%Y-%m-%d")
+CURRENT_TIME=$(date +"%H:%M:%S")
+FULL_DATETIME="$CURRENT_DATE $CURRENT_TIME"
 
 # Repository directory - this is the current directory where the script is running
 REPO_DIR="$(pwd)"
 
-# Create/update the daily update file
-echo "Commiting on DAY $CURRENT_DATE" > daily_update.txt
+# Create/update the daily update file with time included
+echo "Commiting on DAY $CURRENT_DATE at $CURRENT_TIME" > daily_update.txt
 
 # Configure git (if needed)
 git config user.name "Karamvir Singh"
@@ -18,11 +20,11 @@ git add daily_update.txt
 git add update_commit.sh
 git add script.log
 
-# Commit changes
-git commit -m "Daily update: $CURRENT_DATE"
+# Commit changes with time included
+git commit -m "Daily update: $FULL_DATETIME"
 
 # Push to GitHub
 git push origin main
 
-# Log the execution
-echo "Script executed on $CURRENT_DATE" >> "$REPO_DIR/script.log"
+# Log the execution with time
+echo "Script executed on $FULL_DATETIME" >> "$REPO_DIR/script.log"
