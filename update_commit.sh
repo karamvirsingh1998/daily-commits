@@ -21,10 +21,10 @@ git add update_commit.sh
 git add script.log
 
 # Commit changes with time included
-git commit -m "Daily update: $FULL_DATETIME"
+git commit -m "Daily update: $FULL_DATETIME at $CURRENT_TIME"
 
 # Push to GitHub
 git push origin main
 
 # Log the execution with time
-echo "Script executed on $FULL_DATETIME" >> "$REPO_DIR/script.log"
+echo "Script executed on $FULL_DATETIME at $CURRENT_TIME" >> "$REPO_DIR/script.log"
