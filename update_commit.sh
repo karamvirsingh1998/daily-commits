@@ -6,7 +6,7 @@ CURRENT_TIME=$(date +"%H:%M:%S")
 FULL_DATETIME="$CURRENT_DATE $CURRENT_TIME"
 
 # Repository directory - this is the current directory where the script is running
-REPO_DIR="$(pwd)"
+REPO_DIR="/Users/karamvirsingh/Downloads/daily-commits/daily-commits"
 
 # Create/update the daily update file with time included
 echo "Commiting on DAY $CURRENT_DATE at $CURRENT_TIME" > daily_update.txt
