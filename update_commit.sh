@@ -1,12 +1,16 @@
 #!/bin/bash
 
+# Set PATH
+export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+
 # Get current date and time
-CURRENT_DATE=$(date +"%Y-%m-%d")
-CURRENT_TIME=$(date +"%H:%M:%S")
+CURRENT_DATE=$(/bin/date +"%Y-%m-%d")
+CURRENT_TIME=$(/bin/date +"%H:%M:%S")
 FULL_DATETIME="$CURRENT_DATE $CURRENT_TIME"
 
-# Repository directory - this is the current directory where the script is running
+# Use absolute path for repository directory
 REPO_DIR="/Users/karamvirsingh/Downloads/daily-commits/daily-commits"
+cd "$REPO_DIR"
 
 # Create/update the daily update file with time included
 echo "Commiting on DAY $CURRENT_DATE at $CURRENT_TIME" > daily_update.txt
