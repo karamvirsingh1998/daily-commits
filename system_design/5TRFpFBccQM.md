@@ -160,7 +160,7 @@ Choosing Redis’s design means accepting its constraints in exchange for predic
 ```mermaid
 flowchart TD
     A[Start: Incoming client connections] --> B[Single Main Thread]
-    B --> C{I/O Multiplexing (epoll)}
+    B --> C{I/O Multiplexing epoll}
     C --> D[Parse client requests]
     D --> E[Execute commands on in-memory data structures]
     E --> F[Send responses back to clients]
